@@ -1,4 +1,5 @@
 pipeline{
+agent 'master'
 	stages{
 		stage('compilar') {
 			node(label:'master') {
