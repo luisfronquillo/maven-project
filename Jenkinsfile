@@ -28,7 +28,7 @@ parameters{
 		stage('deploy') {
 			steps{
 				node(label:'Windows') {
-					copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, flatten: true, projectName: 'codepipe', selector: specific(env.BUILD_NUMBER), target: env.TOMCAT_HOME
+					copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, flatten: true, projectName: 'PipelineSCM', selector: specific(env.BUILD_NUMBER), target: env.TOMCAT_HOME
 
 				}
 			}
