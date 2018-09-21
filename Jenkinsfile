@@ -1,6 +1,12 @@
 pipeline{
-agent 'master'
-properties([parameters([string(defaultValue: '6', description: '', name: 'MAX_ERROR', trim: false)])])
+agent{
+	node{
+		label 'master'
+	}
+}
+parameters{
+	string(defaultValue: '6', description: '', name: 'MAX_ERROR', trim: false)
+}
 	stages{
 		stage('compilar') {
 			steps{
